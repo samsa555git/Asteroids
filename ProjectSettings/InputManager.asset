@@ -13,9 +13,9 @@ InputManager:
     positiveButton: right
     altNegativeButton: a
     altPositiveButton: d
-    gravity: 3.34
-    dead: 1.6
-    sensitivity: 0.006
+    gravity: 3
+    dead: 0.001
+    sensitivity: 1.86
     snap: 1
     invert: 0
     type: 0
@@ -34,8 +34,8 @@ InputManager:
     sensitivity: 1.12
     snap: 1
     invert: 0
-    type: 2
-    axis: 0
+    type: 0
+    axis: 1
     joyNum: 0
   - serializedVersion: 3
     m_Name: Fire1
