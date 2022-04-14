@@ -33,8 +33,11 @@ public class ShipController : MonoBehaviour {
             AddForce(transform.up * thrustForce *
                 Input.GetAxis("Vertical"));
  
-        // Has a bullet been fired
-        if (Input.GetMouseButtonDown (0))
+        // Has a bullet been fired. Vanha mouse0 setuppi
+        // if (Input.GetMouseButtonDown (0))
+        //    ShootBullet ();
+
+        if (Input.GetButton("Fire1"))
             ShootBullet ();
  
     }
