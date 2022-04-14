@@ -27,15 +27,15 @@ public class ShipController : MonoBehaviour {
     void FixedUpdate () {
  
         // Rotate the ship if necessary
-         transform.Rotate(0, 0, -Input.GetAxis("Horizontal")*
-          rotationSpeed * Time.deltaTime);
+            transform.Rotate(0, 0, -Input.GetAxis("Horizontal")*
+            rotationSpeed * Time.deltaTime);
  
         // Thrust the ship if necessary
-        GetComponent<Rigidbody2D>().
+            GetComponent<Rigidbody2D>().
             AddForce(transform.up * thrustForce *
-                Input.GetAxis("Vertical"));
+            Input.GetAxis("Vertical"));
 
-             //   Debug.Log(Input.GetAxis("Vertical"));
+        //   Debug.Log(Input.GetAxis("Vertical"));
  
         // Has a bullet been fired. Vanha mouse0 setuppi
         // if (Input.GetMouseButtonDown (0))
