@@ -13,6 +13,8 @@ public class ShipController : MonoBehaviour {
  
     private GameController gameController;
  
+    private float ShootTimer = 0;
+
     void Start(){
         // Get a reference to the game controller object and the script
         GameObject gameControllerObject =
@@ -37,8 +39,13 @@ public class ShipController : MonoBehaviour {
         // if (Input.GetMouseButtonDown (0))
         //    ShootBullet ();
 
-        if (Input.GetButton("Fire1"))
-            ShootBullet ();
+        ShootTimer += Time.deltaTime;
+        if (ShootTimer>=0.75 && Input.GetButton("Fire1"))
+            
+            {
+                ShootBullet (); 
+                ShootTimer = 0;
+            }
  
     }
  
