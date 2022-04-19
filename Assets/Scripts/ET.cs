@@ -7,14 +7,14 @@ public class ET : MonoBehaviour {
     void Update () {
  
         // Teleport the game object
-        if(transform.position.x > 9){
+        if(transform.position.x > 12){
  
-            transform.position = new Vector3(-9, transform.position.y, 0);
+            transform.position = new Vector3(-12, transform.position.y, 0);
             GetComponent<TrailRenderer>().Clear();  
  
         }
-        else if(transform.position.x < -9){
-            transform.position = new Vector3(9, transform.position.y, 0);
+        else if(transform.position.x < -12){
+            transform.position = new Vector3(12, transform.position.y, 0);
             GetComponent<TrailRenderer>().Clear();  
         }
  

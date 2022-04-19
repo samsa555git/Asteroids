@@ -64,6 +64,7 @@ public class ShipController : MonoBehaviour {
  
     }
     
+    // crash 
     void Crash(){
         transform.position = new Vector3 (0, 0, 0);
         thrustForce = 3;
@@ -87,6 +88,7 @@ public class ShipController : MonoBehaviour {
             // Move the ship to the centre of the screen
             
            // transform.position = new Vector3 (0, 0, 0); 
+           // sprite change.
             Invoke("Crash", 1.5f);
             Invoke("changesprite", 1.0f);
             thrustForce = 0;
