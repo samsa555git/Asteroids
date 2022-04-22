@@ -16,6 +16,8 @@ public class ShipController : MonoBehaviour {
     public Sprite[] spriteArray;
     private GameController gameController;
 
+    private bool flicker;
+    private float flicktime;
  
     private float ShootTimer = 0;
 
@@ -48,7 +50,7 @@ public class ShipController : MonoBehaviour {
              GetComponent<SpriteRenderer>().sprite=spriteArray[1];
 
              AudioSource.PlayClipAtPoint
-                (rocket, Camera.main.transform.position);
+                (rocket, Camera.main.transform.position, 0.07f);
 
             } 
             else if(thrustForce>0)
@@ -56,6 +58,16 @@ public class ShipController : MonoBehaviour {
             GetComponent<SpriteRenderer>().sprite=spriteArray[0];
             }
 
+        if (flicker) {
+            GetComponent<SpriteRenderer>().enabled = !GetComponent<SpriteRenderer>().enabled;
+            flicktime += Time.deltaTime; 
+            if (flicktime>3){
+                flicker = false;
+                flicktime = 0;
+                 GetComponent<SpriteRenderer>().enabled = true;
+            }
+            
+        }
 
         //   Debug.Log(Input.GetAxis("Vertical"));
  
@@ -80,6 +92,8 @@ public class ShipController : MonoBehaviour {
         rotationSpeed = 100;
         GetComponent<SpriteRenderer>().sprite=spriteArray[0];
         GetComponent<TrailRenderer>().Clear();
+
+        flicker = true; 
     }
 
     void changesprite(){
@@ -89,7 +103,7 @@ public class ShipController : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D c){
  
         // Anything except a bullet is an asteroid
-        if (c.gameObject.tag != "Bullet") {
+        if (c.gameObject.tag != "Bullet" && flicktime==0) {
  
             AudioSource.PlayClipAtPoint
                 (crash, Camera.main.transform.position, 0.05f);
@@ -120,7 +134,7 @@ public class ShipController : MonoBehaviour {
             transform.rotation);
  
         // Play a shoot sound
-        AudioSource.PlayClipAtPoint (shoot, Camera.main.transform.position, 0.01f);
+        AudioSource.PlayClipAtPoint (shoot, Camera.main.transform.position, 0.05f);
     
     }
 }
