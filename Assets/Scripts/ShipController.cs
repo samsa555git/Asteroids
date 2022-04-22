@@ -58,6 +58,8 @@ public class ShipController : MonoBehaviour {
             GetComponent<SpriteRenderer>().sprite=spriteArray[0];
             }
 
+        // flicker. Thnx to Noora
+
         if (flicker) {
             GetComponent<SpriteRenderer>().enabled = !GetComponent<SpriteRenderer>().enabled;
             flicktime += Time.deltaTime; 
