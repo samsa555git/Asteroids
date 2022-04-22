@@ -41,7 +41,7 @@ public class GameController : MonoBehaviour {
         wave = 1;
  
         // Prepare the HUD
-        scoreText.text = "SCORE:" + score;
+        scoreText.text = "SCORE: " + score;
         hiscoreText.text = "HISCORE: " + hiscore;
         livesText.text = "LIVES: " + lives;
         waveText.text = "WAVE: " + wave;
@@ -73,7 +73,7 @@ public class GameController : MonoBehaviour {
     public void IncrementScore(){
         score++;
  
-        scoreText.text = "SCORE:" + score;
+        scoreText.text = "SCORE: " + score;
  
         if (score > hiscore) {
             hiscore = score;

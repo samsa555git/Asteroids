@@ -64,7 +64,7 @@ public class AsteroidController : MonoBehaviour {
  
             // Play a sound
             AudioSource.PlayClipAtPoint(
-                destroy, Camera.main.transform.position);
+                destroy, Camera.main.transform.position, 0.05f);
  
             // Add to the score
             gameController.IncrementScore();

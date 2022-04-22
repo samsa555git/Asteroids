@@ -191,7 +191,7 @@ Canvas:
   m_GameObject: {fileID: 306507572}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 1823159977}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -476,6 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crash: {fileID: 8300000, guid: e621b42251693474b99a059e0848189f, type: 3}
   shoot: {fileID: 8300000, guid: 2396f2b8cd30e9747ba414b954b3be94, type: 3}
+  rocket: {fileID: 8300000, guid: 48ccafa29db63d4489e7a487765d51bc, type: 3}
   bullet: {fileID: 5628401320441560833, guid: e30805ab729730c4183a0779388ac51a, type: 3}
   spriteArray:
   - {fileID: -7108038063305337149, guid: 221735f5dd0d0514f80da1d533e78560, type: 3}
@@ -934,7 +935,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: SCORE
+  m_Text: 'SCORE '
 --- !u!222 &1624537490
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ public class ShipController : MonoBehaviour {
  
     public AudioClip crash;
     public AudioClip shoot;
+
+    public AudioClip rocket;
  
     public GameObject bullet;
  
@@ -39,8 +41,15 @@ public class ShipController : MonoBehaviour {
             Input.GetAxis("Vertical"));
             
             if (Input.GetAxis("Vertical")>=0.1 && thrustForce>0) 
+
+            
+
             {
              GetComponent<SpriteRenderer>().sprite=spriteArray[1];
+
+             AudioSource.PlayClipAtPoint
+                (rocket, Camera.main.transform.position);
+
             } 
             else if(thrustForce>0)
             {
@@ -83,7 +92,7 @@ public class ShipController : MonoBehaviour {
         if (c.gameObject.tag != "Bullet") {
  
             AudioSource.PlayClipAtPoint
-                (crash, Camera.main.transform.position);
+                (crash, Camera.main.transform.position, 0.05f);
  
             // Move the ship to the centre of the screen
             
@@ -111,6 +120,7 @@ public class ShipController : MonoBehaviour {
             transform.rotation);
  
         // Play a shoot sound
-        AudioSource.PlayClipAtPoint (shoot, Camera.main.transform.position);
+        AudioSource.PlayClipAtPoint (shoot, Camera.main.transform.position, 0.01f);
+    
     }
 }
